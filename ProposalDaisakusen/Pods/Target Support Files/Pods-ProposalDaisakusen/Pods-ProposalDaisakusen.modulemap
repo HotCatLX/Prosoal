@@ -1,0 +1,6 @@
+module Pods_ProposalDaisakusen {
+  umbrella header "Pods-ProposalDaisakusen-umbrella.h"
+
+  export *
+  module * { export * }
+}
