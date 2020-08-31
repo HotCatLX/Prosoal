@@ -21,13 +21,15 @@ let ScreenHeight: CGFloat = UIScreen.main.bounds.size.height
  * 宽度和高度适配
  */
 //高度适配
+//UI切图错误,导出的尺寸图为 562.5 * 1218
+//可以更换为 375 * 667 的适配
 public func Height( _ origin : CGFloat) -> CGFloat {
-    let fitHeight: CGFloat = (origin / 667.000) * UIScreen.main.bounds.size.height
+    let fitHeight: CGFloat = (origin / 1218.0) * UIScreen.main.bounds.size.height
     return fitHeight
 }
 //宽度适配
 public func Width( _ origin: CGFloat) -> CGFloat {
-    let fitWidth: CGFloat = (origin / 375.000) * UIScreen.main.bounds.size.width
+    let fitWidth: CGFloat = (origin / 562.5) * UIScreen.main.bounds.size.width
     return fitWidth
 }
 

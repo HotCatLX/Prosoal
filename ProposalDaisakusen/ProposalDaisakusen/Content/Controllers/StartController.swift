@@ -40,16 +40,23 @@ class StartController: UIViewController {
 
 // MARK: - Action
 extension StartController {
-    
-    
+
     @objc func btnClick(btn: UIButton) {
-        if currentIndex >= noticeStrAry.count  {
-            ToastView.shared().show(str: "jump")
-        }else {
-            let noticeStr: String = noticeStrAry[currentIndex]
-                   currentIndex += 1
-            ToastView.shared().show(str: noticeStr)
-        }
+        
+        let questionVC: QuestionController = QuestionController()
+        questionVC.modalPresentationStyle = .fullScreen
+        self.present(questionVC, animated: true, completion: nil)
+        
+        
+//        if currentIndex >= noticeStrAry.count  {
+//            let questionVC: QuestionController = QuestionController()
+//            questionVC.modalPresentationStyle = .fullScreen
+//            self.present(questionVC, animated: true, completion: nil)
+//        }else {
+//            let noticeStr: String = noticeStrAry[currentIndex]
+//                   currentIndex += 1
+//            ToastView.shared().show(str: noticeStr)
+//        }
     }
 }
 
@@ -65,8 +72,8 @@ extension StartController {
         
         jumpBtn.snp.makeConstraints { (make) in
             make.centerX.equalTo(view.snp.centerX)
-            make.width.equalTo(Width(200))
-            make.height.equalTo(Height(44))
+            make.width.equalTo(Width(300))
+            make.height.equalTo(Height(46))
             make.bottom.equalTo(self.view.snp.bottom).offset(-Height(150))
         }
 

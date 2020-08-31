@@ -24,6 +24,9 @@
 		3D4B43E224F6C93300154DC7 /* CommonDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B43E124F6C93300154DC7 /* CommonDefine.swift */; };
 		3D4B43E424F6CBA900154DC7 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B43E324F6CBA900154DC7 /* QuestionController.swift */; };
 		3D4B43E624F6CC5200154DC7 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B43E524F6CC5200154DC7 /* AlertView.swift */; };
+		3D4B43E824FA3F2900154DC7 /* ProgressRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B43E724FA3F2900154DC7 /* ProgressRateView.swift */; };
+		3DC9D36424FAA97B00D4AAED /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC9D36324FAA97B00D4AAED /* QuestionView.swift */; };
+		3DC9D36624FABA5B00D4AAED /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC9D36524FABA5B00D4AAED /* UIButtonExtension.swift */; };
 		5BDDF202C98EAB955A055E7D /* libPods-ProposalDaisakusen-ProposalDaisakusenUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C72692A7E19378A08F99FFD3 /* libPods-ProposalDaisakusen-ProposalDaisakusenUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +70,9 @@
 		3D4B43E124F6C93300154DC7 /* CommonDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDefine.swift; sourceTree = "<group>"; };
 		3D4B43E324F6CBA900154DC7 /* QuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
 		3D4B43E524F6CC5200154DC7 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		3D4B43E724FA3F2900154DC7 /* ProgressRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRateView.swift; sourceTree = "<group>"; };
+		3DC9D36324FAA97B00D4AAED /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		3DC9D36524FABA5B00D4AAED /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		4130366F051F0BA300ABDC6E /* libPods-ProposalDaisakusen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProposalDaisakusen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DE60E1B3BD2384EECE03A7 /* Pods-ProposalDaisakusen-ProposalDaisakusenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProposalDaisakusen-ProposalDaisakusenUITests.debug.xcconfig"; path = "Target Support Files/Pods-ProposalDaisakusen-ProposalDaisakusenUITests/Pods-ProposalDaisakusen-ProposalDaisakusenUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		83210B4CE41679257144593E /* libPods-ProposalDaisakusenTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProposalDaisakusenTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +187,7 @@
 		3D4B43D524F57CD800154DC7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3DC9D36524FABA5B00D4AAED /* UIButtonExtension.swift */,
 				3D4B43DF24F5843E00154DC7 /* LabelExtension.swift */,
 				3D4B43DD24F5840100154DC7 /* ToastView.swift */,
 				3D4B43D624F57CF500154DC7 /* UIColorExtension.swift */,
@@ -194,10 +201,28 @@
 		3D4B43DA24F57D7E00154DC7 /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				3D4B43EA24FA3F3A00154DC7 /* Controllers */,
+				3D4B43E924FA3F3000154DC7 /* Views */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		3D4B43E924FA3F3000154DC7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D4B43E724FA3F2900154DC7 /* ProgressRateView.swift */,
+				3DC9D36324FAA97B00D4AAED /* QuestionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3D4B43EA24FA3F3A00154DC7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				3D4B43DB24F57DA500154DC7 /* StartController.swift */,
 				3D4B43E324F6CBA900154DC7 /* QuestionController.swift */,
 			);
-			path = Content;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		84B11E776B2AB27C46695380 /* Pods */ = {
@@ -420,8 +445,11 @@
 				3D4B43E224F6C93300154DC7 /* CommonDefine.swift in Sources */,
 				3D4B43E424F6CBA900154DC7 /* QuestionController.swift in Sources */,
 				3D4B43A524F56FA300154DC7 /* AppDelegate.swift in Sources */,
+				3DC9D36424FAA97B00D4AAED /* QuestionView.swift in Sources */,
 				3D4B43DC24F57DA500154DC7 /* StartController.swift in Sources */,
 				3D4B43E624F6CC5200154DC7 /* AlertView.swift in Sources */,
+				3D4B43E824FA3F2900154DC7 /* ProgressRateView.swift in Sources */,
+				3DC9D36624FABA5B00D4AAED /* UIButtonExtension.swift in Sources */,
 				3D4B43D924F57D1A00154DC7 /* CommonInterface.swift in Sources */,
 				3D4B43A724F56FA300154DC7 /* SceneDelegate.swift in Sources */,
 				3D4B43DE24F5840100154DC7 /* ToastView.swift in Sources */,

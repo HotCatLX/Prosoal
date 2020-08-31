@@ -1,6 +1,5 @@
 //
 //  LabelExtension.swift
-//  Swift假面舞会
 //
 //  Created by suckerl on 2019/12/10.
 //  Copyright © 2019 suckerl. All rights reserved.
