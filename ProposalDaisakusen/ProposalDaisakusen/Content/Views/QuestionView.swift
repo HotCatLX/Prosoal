@@ -43,6 +43,8 @@ class QuestionModel: NSObject {
 
 }
 
+typealias callBackHandler = (_ model: QuestionModel?, _ results: [Bool]) -> Void
+
 class QusetionView: UIView {
     
     //subviews
@@ -117,6 +119,8 @@ class QusetionView: UIView {
     //status
     var selectBtn: UIButton?
     
+    //回调handler
+    public var clickCallBackHandler: callBackHandler!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -143,12 +147,14 @@ class QusetionView: UIView {
 extension QusetionView {
     
     func clearData() {
+        self.errorImage.isHidden = true
         self.titleLabel.text = ""
         self.infoLabel.text = ""
         self.firstBtn .setTitle("", for: .normal)
         self.secBtn .setTitle("", for: .normal)
         self.thirdBtn .setTitle("", for: .normal)
         self.secBtn .setTitle("", for: .normal)
+        self.defaultResults = [false,false,false,false]
     }
     
     
@@ -251,12 +257,12 @@ extension QusetionView {
         if self.currentModel!.choiceType == .OnlyChoice {
             self.selectBtn?.isSelected = false
             self.selectBtn?.backgroundColor = UIColor.clear
-            
             btn.isSelected = true
             btn.backgroundColor = ColorSelectBG_Question
             self.selectBtn = btn
         }else {
             btn.isSelected = !btn.isSelected
+            btn.backgroundColor = btn.isSelected ? ColorSelectBG_Question : UIColor.clear
         }
         
         //toast show and result deal
@@ -273,11 +279,20 @@ extension QusetionView {
                     make.top.equalTo(self.snp.top).offset(yValue)
                 }
             }else {
+                self.errorImage.isHidden = true
+         
+                if clickCallBackHandler != nil {
+                    clickCallBackHandler(currentModel, defaultResults)
+                }
                 
             }
+        }else {
+            self.defaultResults[btn.tag] = btn.isSelected
+            if clickCallBackHandler != nil {
+                clickCallBackHandler(currentModel, defaultResults)
+            }
+            
         }
-        
-        
 
     }
 }

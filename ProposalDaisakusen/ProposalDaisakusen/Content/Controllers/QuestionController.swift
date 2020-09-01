@@ -28,6 +28,7 @@ class QuestionController: UIViewController {
     
     var dataArray: Array = Array<QuestionModel>()
     
+    var currentDataIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,10 +85,37 @@ extension QuestionController {
                                      choices: ["1","2","3","4"],
                                      results: [true,true,true,true])
         
-
         dataArray.append(firstModel)
         dataArray.append(secModel)
-        
+
         questionView.bindData(data: firstModel)
+        
+        questionView.clickCallBackHandler = { (currentmodel, resultsArray) -> Void in
+            if currentmodel?.choiceType == nil {
+                return
+            }
+            
+            if currentmodel!.choiceType == .OnlyChoice {
+                self.changeNextData()
+            }else {
+                //遍历数组,数据比较,如果相等
+                
+                
+                
+                
+            }
+        }
+        
+    }
+    
+    func changeNextData() {
+        currentDataIndex += 1
+        if currentDataIndex >= dataArray.count {
+            //进入答题之外的环节
+            return
+        }
+        
+        let newData = dataArray[currentDataIndex]
+        questionView.bindData(data: newData)
     }
 }
