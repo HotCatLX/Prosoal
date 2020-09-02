@@ -30,6 +30,8 @@ class ProgressRateView: UIView {
     
     let selfWidth = Width(400)
     
+    var currentProgress: CGFloat = 0.0
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(girlImage)
@@ -76,6 +78,7 @@ extension ProgressRateView {
 extension ProgressRateView {
 
     public func changeProgressRate(progress: CGFloat) {
+        currentProgress = progress
         var rate = progress
         if rate < 1.0 { rate = 1.0}
         if rate >= 4.0 { rate = 4.0}
@@ -87,7 +90,9 @@ extension ProgressRateView {
                 make.left.equalTo(changeXValue)
             }
         }
-        
     }
     
+    public func getCurrentProgress() -> CGFloat {
+        return currentProgress
+    }
 }

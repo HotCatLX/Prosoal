@@ -82,11 +82,18 @@ extension QuestionController {
         let secModel = QuestionModel(index: 2,
                                      title: "这是第二题的内容",
                                      type: .MultipleChoice,
-                                     choices: ["1","2","3","4"],
-                                     results: [true,true,true,true])
+                                     choices: ["21","22","23","24"],
+                                     results: [true,false,true,true])
+        
+        let thirdModel = QuestionModel(index: 3,
+                                            title: "这是第三题的内容",
+                                            type: .MultipleChoice,
+                                            choices: ["31","32","33","34"],
+                                            results: [true,true,true,false])
         
         dataArray.append(firstModel)
         dataArray.append(secModel)
+        dataArray.append(thirdModel)
 
         questionView.bindData(data: firstModel)
         
@@ -98,24 +105,35 @@ extension QuestionController {
             if currentmodel!.choiceType == .OnlyChoice {
                 self.changeNextData()
             }else {
-                //遍历数组,数据比较,如果相等
-                
-                
-                
-                
+                if currentmodel?.resultArray == resultsArray {
+                    self.changeNextData()
+                }else {
+                     ToastView.shared().show(str: "这可是多选题,再想想!!!")
+                }
             }
         }
         
     }
     
+    
+    
     func changeNextData() {
+        self.changeProgressRate()
+        
         currentDataIndex += 1
         if currentDataIndex >= dataArray.count {
-            //进入答题之外的环节
-            return
+            let gameVC: GameController = GameController()
+            gameVC.modalPresentationStyle = .fullScreen
+            self.present(gameVC, animated: true, completion: nil)
         }
         
         let newData = dataArray[currentDataIndex]
         questionView.bindData(data: newData)
+    }
+    
+    func changeProgressRate()  {
+        var progress: CGFloat = self.progressRate.getCurrentProgress()
+        progress += 1.0
+        progressRate.changeProgressRate(progress: progress)
     }
 }

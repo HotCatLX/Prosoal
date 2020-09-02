@@ -43,9 +43,13 @@ extension StartController {
 
     @objc func btnClick(btn: UIButton) {
         
-        let questionVC: QuestionController = QuestionController()
-        questionVC.modalPresentationStyle = .fullScreen
-        self.present(questionVC, animated: true, completion: nil)
+//        let questionVC: QuestionController = QuestionController()
+//        questionVC.modalPresentationStyle = .fullScreen
+//        self.present(questionVC, animated: true, completion: nil)
+        
+        let gameVC: GameController = GameController()
+        gameVC.modalPresentationStyle = .fullScreen
+        self.present(gameVC, animated: true, completion: nil)
         
         
 //        if currentIndex >= noticeStrAry.count  {

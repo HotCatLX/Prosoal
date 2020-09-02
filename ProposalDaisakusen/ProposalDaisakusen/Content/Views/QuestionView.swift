@@ -66,7 +66,7 @@ class QusetionView: UIView {
     }()
       
     fileprivate lazy var firstBtn: UIButton = {
-        let first = UIButton(title: "first", textColor: ColorInfo_Question, backColor: UIColor.clear, fontSize: 21, corner: 17)
+        let first = UIButton(title: "first", textColor: ColorInfo_Question, backColor: UIColor.white, fontSize: 21, corner: 17)
         first.setTitleColor(UIColor.white, for: .selected)
         first.layer.borderColor = UIColor(hexStr: "#EEB5AD").cgColor
         first.layer.borderWidth = 1
@@ -76,7 +76,7 @@ class QusetionView: UIView {
     }()
     
     fileprivate lazy var secBtn: UIButton = {
-        let sec = UIButton(title: "sec", textColor: ColorInfo_Question, backColor: UIColor.clear, fontSize: 21, corner: 17)
+        let sec = UIButton(title: "sec", textColor: ColorInfo_Question, backColor: UIColor.white, fontSize: 21, corner: 17)
         sec.setTitleColor(UIColor.white, for: .selected)
         sec.layer.borderColor = UIColor(hexStr: "#EEB5AD").cgColor
         sec.layer.borderWidth = 1
@@ -86,7 +86,7 @@ class QusetionView: UIView {
     }()
     
     fileprivate lazy var thirdBtn: UIButton = {
-        let third = UIButton(title: "third", textColor: ColorInfo_Question, backColor: UIColor.clear, fontSize: 21, corner: 17)
+        let third = UIButton(title: "third", textColor: ColorInfo_Question, backColor: UIColor.white, fontSize: 21, corner: 17)
         third.setTitleColor(UIColor.white, for: .selected)
         third.layer.borderColor = UIColor(hexStr: "#EEB5AD").cgColor
         third.layer.borderWidth = 1
@@ -96,7 +96,7 @@ class QusetionView: UIView {
     }()
     
     fileprivate lazy var forthBtn: UIButton = {
-        let forth = UIButton(title: "forth", textColor: ColorInfo_Question, backColor: UIColor.clear, fontSize: 21, corner: 17)
+        let forth = UIButton(title: "forth", textColor: ColorInfo_Question, backColor: UIColor.white, fontSize: 21, corner: 17)
         forth.setTitleColor(UIColor.white, for: .selected)
         forth.layer.borderColor = UIColor(hexStr: "#EEB5AD").cgColor
         forth.layer.borderWidth = 1
@@ -116,6 +116,8 @@ class QusetionView: UIView {
     
     var currentModel: QuestionModel?
     
+    var btnArray :[UIButton] = Array()
+    
     //status
     var selectBtn: UIButton?
     
@@ -132,6 +134,11 @@ class QusetionView: UIView {
         self.addSubview(thirdBtn)
         self.addSubview(forthBtn)
         self.addSubview(errorImage)
+        
+        btnArray.append(firstBtn)
+        btnArray.append(secBtn)
+        btnArray.append(thirdBtn)
+        btnArray.append(forthBtn)
         self.connstructLayout()
     }
     
@@ -147,14 +154,20 @@ class QusetionView: UIView {
 extension QusetionView {
     
     func clearData() {
+        self.selectBtn = nil
         self.errorImage.isHidden = true
         self.titleLabel.text = ""
         self.infoLabel.text = ""
-        self.firstBtn .setTitle("", for: .normal)
-        self.secBtn .setTitle("", for: .normal)
-        self.thirdBtn .setTitle("", for: .normal)
-        self.secBtn .setTitle("", for: .normal)
         self.defaultResults = [false,false,false,false]
+        self.btnStatusReset()
+    }
+    
+    func btnStatusReset() {
+        for btn in btnArray {
+            btn.setTitle("", for: .normal)
+            btn.backgroundColor = UIColor.white
+            btn.isSelected = false
+        }
     }
     
     
@@ -280,7 +293,6 @@ extension QusetionView {
                 }
             }else {
                 self.errorImage.isHidden = true
-         
                 if clickCallBackHandler != nil {
                     clickCallBackHandler(currentModel, defaultResults)
                 }

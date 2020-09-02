@@ -27,6 +27,7 @@
 		3D4B43E824FA3F2900154DC7 /* ProgressRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B43E724FA3F2900154DC7 /* ProgressRateView.swift */; };
 		3DC9D36424FAA97B00D4AAED /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC9D36324FAA97B00D4AAED /* QuestionView.swift */; };
 		3DC9D36624FABA5B00D4AAED /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC9D36524FABA5B00D4AAED /* UIButtonExtension.swift */; };
+		3DD183C5250008050012B264 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD183C4250008050012B264 /* GameController.swift */; };
 		5BDDF202C98EAB955A055E7D /* libPods-ProposalDaisakusen-ProposalDaisakusenUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C72692A7E19378A08F99FFD3 /* libPods-ProposalDaisakusen-ProposalDaisakusenUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		3D4B43E724FA3F2900154DC7 /* ProgressRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRateView.swift; sourceTree = "<group>"; };
 		3DC9D36324FAA97B00D4AAED /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		3DC9D36524FABA5B00D4AAED /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		3DD183C4250008050012B264 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		4130366F051F0BA300ABDC6E /* libPods-ProposalDaisakusen.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProposalDaisakusen.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DE60E1B3BD2384EECE03A7 /* Pods-ProposalDaisakusen-ProposalDaisakusenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProposalDaisakusen-ProposalDaisakusenUITests.debug.xcconfig"; path = "Target Support Files/Pods-ProposalDaisakusen-ProposalDaisakusenUITests/Pods-ProposalDaisakusen-ProposalDaisakusenUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		83210B4CE41679257144593E /* libPods-ProposalDaisakusenTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProposalDaisakusenTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +223,7 @@
 			children = (
 				3D4B43DB24F57DA500154DC7 /* StartController.swift */,
 				3D4B43E324F6CBA900154DC7 /* QuestionController.swift */,
+				3DD183C4250008050012B264 /* GameController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				3D4B43A724F56FA300154DC7 /* SceneDelegate.swift in Sources */,
 				3D4B43DE24F5840100154DC7 /* ToastView.swift in Sources */,
 				3D4B43D724F57CF500154DC7 /* UIColorExtension.swift in Sources */,
+				3DD183C5250008050012B264 /* GameController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
