@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C49CA958197394FBA9288D9 /* libPods-ProposalDaisakusen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4130366F051F0BA300ABDC6E /* libPods-ProposalDaisakusen.a */; };
 		3A202164757272C97DB77778 /* libPods-ProposalDaisakusenTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83210B4CE41679257144593E /* libPods-ProposalDaisakusenTests.a */; };
+		3D29E217250D49B300B8F59F /* Jay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3D29E216250D49B300B8F59F /* Jay.mp3 */; };
 		3D4B43A524F56FA300154DC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B43A424F56FA300154DC7 /* AppDelegate.swift */; };
 		3D4B43A724F56FA300154DC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B43A624F56FA300154DC7 /* SceneDelegate.swift */; };
 		3D4B43AC24F56FA300154DC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D4B43AA24F56FA300154DC7 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		2DDBE65EE8D9E42C67B44412 /* Pods-ProposalDaisakusen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProposalDaisakusen.release.xcconfig"; path = "Target Support Files/Pods-ProposalDaisakusen/Pods-ProposalDaisakusen.release.xcconfig"; sourceTree = "<group>"; };
+		3D29E216250D49B300B8F59F /* Jay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Jay.mp3; sourceTree = "<group>"; };
 		3D4B43A124F56FA300154DC7 /* ProposalDaisakusen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProposalDaisakusen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4B43A424F56FA300154DC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D4B43A624F56FA300154DC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 				83210B4CE41679257144593E /* libPods-ProposalDaisakusenTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3D29E213250D495E00B8F59F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3D29E216250D49B300B8F59F /* Jay.mp3 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		3D4B439824F56FA300154DC7 = {
@@ -203,6 +213,7 @@
 		3D4B43DA24F57D7E00154DC7 /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				3D29E213250D495E00B8F59F /* Resources */,
 				3D4B43EA24FA3F3A00154DC7 /* Controllers */,
 				3D4B43E924FA3F3000154DC7 /* Views */,
 			);
@@ -349,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D4B43B124F56FA500154DC7 /* LaunchScreen.storyboard in Resources */,
+				3D29E217250D49B300B8F59F /* Jay.mp3 in Resources */,
 				3D4B43AE24F56FA500154DC7 /* Assets.xcassets in Resources */,
 				3D4B43AC24F56FA300154DC7 /* Main.storyboard in Resources */,
 			);

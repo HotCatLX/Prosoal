@@ -25,11 +25,9 @@ class StartController: UIViewController {
         return jumpBtn
     }()
     
-    
     let noticeStrAry: Array = ["准备好了么?","确定准备好了么?","那么开始喽!"]
 
     var currentIndex = 0
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,25 +40,15 @@ class StartController: UIViewController {
 extension StartController {
 
     @objc func btnClick(btn: UIButton) {
-        
-//        let questionVC: QuestionController = QuestionController()
-//        questionVC.modalPresentationStyle = .fullScreen
-//        self.present(questionVC, animated: true, completion: nil)
-        
-        let gameVC: GameController = GameController()
-        gameVC.modalPresentationStyle = .fullScreen
-        self.present(gameVC, animated: true, completion: nil)
-        
-        
-//        if currentIndex >= noticeStrAry.count  {
-//            let questionVC: QuestionController = QuestionController()
-//            questionVC.modalPresentationStyle = .fullScreen
-//            self.present(questionVC, animated: true, completion: nil)
-//        }else {
-//            let noticeStr: String = noticeStrAry[currentIndex]
-//                   currentIndex += 1
-//            ToastView.shared().show(str: noticeStr)
-//        }
+        if currentIndex >= noticeStrAry.count  {
+            let questionVC: QuestionController = QuestionController()
+            questionVC.modalPresentationStyle = .fullScreen
+            self.present(questionVC, animated: true, completion: nil)
+        }else {
+            let noticeStr: String = noticeStrAry[currentIndex]
+                   currentIndex += 1
+            ToastView.shared().show(str: noticeStr)
+        }
     }
 }
 

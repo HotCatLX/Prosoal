@@ -8,6 +8,8 @@
 
 import UIKit
 import SnapKit
+import AVFoundation
+
 
 
 class GameController: UIViewController {
@@ -18,7 +20,7 @@ class GameController: UIViewController {
     }()
     
     fileprivate lazy var noticeLabel: UILabel = {
-        var label = UILabel(text: "在15秒内完成头像点击20次", color: ColorText_red, fontSize: 14)
+        var label = UILabel(text: "在15秒内完成头像点击10次", color: ColorText_red, fontSize: 14)
         label.font = UIFont(name: "Zapfino", size: 14)
         label.textAlignment = .center
         return label
@@ -33,14 +35,22 @@ class GameController: UIViewController {
     
     
     fileprivate lazy var timer: Timer = {
-        var timer = Timer(timeInterval: 5, target: self, selector: #selector(timerChange), userInfo: nil, repeats: true)
+        var timer = Timer(timeInterval: 15, target: self, selector: #selector(timerChange), userInfo: nil, repeats: true)
         RunLoop.current.add(timer, forMode: .common)
         return timer
     }()
     
+    
+    fileprivate lazy var player: AVPlayer = {
+        let url = Bundle.main.url(forResource: "Jay.mp3", withExtension: nil)
+        let playerItem = AVPlayerItem(url: url!)
+        var player = AVPlayer(playerItem: playerItem)
+        return player
+    }()
+    
     var clickCount: NSInteger = 0
     
-    var maxCount: NSInteger = 20
+    var maxCount: NSInteger = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +93,7 @@ extension GameController {
             noticeLabel.removeFromSuperview()
             boyBtn.removeFromSuperview()
             bgImage.image = UIImage(named:"last")
+            player.play()
         }
     }
     
